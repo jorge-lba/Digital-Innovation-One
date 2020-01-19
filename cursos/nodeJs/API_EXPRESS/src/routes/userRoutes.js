@@ -23,6 +23,15 @@ const userRoutes = ( app ) => {
             const users = getUsers()
             res.send( { users } )
         } )
+        .post( ( req, res ) => {
+            const users = getUsers()
+
+            users.push( req.body )
+
+            saveUser( users )
+
+            res.send(201).send( 'Usuario cadastrado!' )
+        } )
     
 }
 
