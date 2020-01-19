@@ -14,3 +14,5 @@ const getUsers = ( ) => {
         return [ ]
     } 
 }
+
+const saveUsers = ( users ) => fs.writeFileSync( filePath, JSON.stringify( users, null, '\t' ) )
