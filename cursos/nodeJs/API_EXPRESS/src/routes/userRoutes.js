@@ -30,7 +30,7 @@ const userRoutes = ( app ) => {
 
             saveUser( users )
 
-            res.send(201).send( 'Usuario cadastrado!' )
+            res.status(201).send( 'Usuario cadastrado!' )
         } )
     
 }
