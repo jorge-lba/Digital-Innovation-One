@@ -1,5 +1,5 @@
 const fs = require( 'fs' )
-const { join } = fs
+const { join } = require( 'path' )
 
 const filePath = join( __dirname.replace( 'routes', 'dataBase' ), 'users.json' )
 
@@ -14,5 +14,3 @@ const getUsers = ( ) => {
         return [ ]
     } 
 }
-
-const saveUsers = ( users ) => fs.writeFileSync( filePath, JSON.stringify( users, null, '\t' ) )
