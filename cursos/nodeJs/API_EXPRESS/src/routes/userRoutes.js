@@ -32,6 +32,24 @@ const userRoutes = ( app ) => {
 
             res.status(201).send( 'Usuario cadastrado!' )
         } )
+        .put( ( req, res ) => {
+            const users = getUsers()
+
+            saveUser( users.map( user => {
+                if( user.id === req.params.id ){
+                    return {
+                        ...user,
+                        ...req.body
+                    }
+                } else {
+                    return user
+                }
+
+            } ) )
+
+            res.status(200).send( 'Usuario foi atualizado' )
+
+        } )
     
 }
 
