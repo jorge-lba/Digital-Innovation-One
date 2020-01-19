@@ -11,7 +11,7 @@ const getUsers = ( ) => {
     try {
         return JSON.parse( data )
     } catch (error) {
-        return [ ]
+        return [ { error: 'Usuario não esta cadastrado' } ]
     } 
 }
 
@@ -20,7 +20,7 @@ const saveUser = ( users ) => fs.writeFileSync( filePath, JSON.stringify( users,
 const userRoutes = ( app ) => {
     app.route( '/users/:id?' )
         .get( ( req, res ) => {
-            const users = getUsers
+            const users = getUsers()
             res.send( { users } )
         } )
     

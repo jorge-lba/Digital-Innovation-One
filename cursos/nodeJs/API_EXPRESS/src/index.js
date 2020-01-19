@@ -5,6 +5,8 @@ const userRoutes = require( './routes/userRoutes' )
 const app = express()
 const port = 3000
 
+userRoutes( app )
+
 app.get( '/', ( req, res ) => {
     res.send( "Hello Word!" )
 } )
